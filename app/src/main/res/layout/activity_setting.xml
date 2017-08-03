@@ -15,23 +15,11 @@
         android:textSize="20sp"
         tools:ignore="HardcodedText" />
 
-    <com.heimad.mobilesafe.ui.SttingView
+    <com.heimad.mobilesafe.ui.SettingView
+        android:id="@+id/sv_update"
         android:layout_width="match_parent"
         android:layout_height="80dp">
 
-    </com.heimad.mobilesafe.ui.SttingView>
-
-    <com.heimad.mobilesafe.ui.SttingView
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
-
-    </com.heimad.mobilesafe.ui.SttingView>
-
-    <com.heimad.mobilesafe.ui.SttingView
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
-
-    </com.heimad.mobilesafe.ui.SttingView>
-
+    </com.heimad.mobilesafe.ui.SettingView>
 
 </LinearLayout>

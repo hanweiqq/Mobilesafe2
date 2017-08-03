@@ -2,6 +2,7 @@ package com.heimad.mobilesafe;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -31,6 +32,7 @@ import java.sql.Time;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private SharedPreferences sp;
     private static final int MSG_SHOW_UPDATE = 10;
     private static final int MSG_ENTER_HOME = 20;
     private static final int MES_IO_ERROR = 30;
@@ -64,7 +66,7 @@ public class SplashActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "错误号：" + MES_JSON_ERROR, Toast.LENGTH_SHORT).show();
                     break;
                 case MSG_NET_ERROR:
-                    Toast.makeText(getApplicationContext(),"请检查网络连接",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "请检查网络连接", Toast.LENGTH_SHORT).show();
                 default:
                     break;
 
@@ -87,13 +89,40 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sp = getSharedPreferences("config", MODE_PRIVATE);
         //ViewUtils.inject(this);
         tv_splash_version = (TextView) findViewById(R.id.tv_splash_version);
         tv_splash_process = (TextView) findViewById(R.id.tv_splash_process);
         //动态显示版本号
         tv_splash_version.setText(getVersionName());
 
-        checkupdate();
+        if (sp.getBoolean("update", true)) {
+            checkupdate();
+        } else {
+            new Thread(){
+                @Override
+                public void run() {
+                    super.run();
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    //runOnUiThread();可以使线程中的内容直接发送消息给主线程
+                        //就是讲enterHome（）直接发送消息给主线程
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            enterHome();//进入下一个界面
+                        }
+                    });
+
+                }
+            }.start();
+
+        }
+
     }
 
     /**
@@ -145,7 +174,7 @@ public class SplashActivity extends AppCompatActivity {
                             //new Message（）；
                             message.what = MSG_SHOW_UPDATE;
                         }
-                    }else{
+                    } else {
                         message.what = MSG_NET_ERROR;
                     }
                 } catch (IOException e) {

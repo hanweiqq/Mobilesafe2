@@ -20,7 +20,11 @@
         android:text="自动更新关闭"
         android:textSize="16sp" />
 
+    <!--android:focusable="false"不获取焦点
+        android:clickable="false"不响应点击事件-->
     <CheckBox
+        android:focusable="false"
+        android:clickable="false"
         android:id="@+id/cb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
