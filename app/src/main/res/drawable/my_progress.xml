@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/shenmabg"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    />
+    <!--
+    高版本不兼容以下两个属性
+    android:framesCount="12"-->
+    <!--android:frameDuration="100"-->

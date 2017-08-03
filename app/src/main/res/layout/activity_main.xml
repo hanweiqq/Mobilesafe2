@@ -21,7 +21,16 @@
         android:layout_centerHorizontal="true"
         tools:ignore="HardcodedText,SpUsage" />
 
+    <!--自定义样式
+         观察系统的样式
+                    C:\sdk\platforms\android-16\data\res\values\styles.xml找到相应控件
+                     从相关item：android:indeterminateDrawable查看引用的xml文件路径（可以把这个xml当多一个特殊的图片）
+         2.在系统的代码的基础上修改   修改indeterminateDrawable指向路径的文件，就是修改控件引用的样式
+                    在其他地方新建一个自己的xml样式，再引用
+         3、在当前使用的控件中通过indeterminateDrawable属于重新引用修改后的xml文件
+                   -->
     <ProgressBar
+        android:indeterminateDrawable="@drawable/my_progress"
         android:id="@+id/pb_splash_process"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

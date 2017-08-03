@@ -29,7 +29,7 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        System.out.println("跳转到homeActivity界面");
+        //System.out.println("跳转到homeActivity界面");
         gv_home = findViewById(R.id.gv_home);
         gv_home.setAdapter(new HomeAdapter());
         gv_home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
