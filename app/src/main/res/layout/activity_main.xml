@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.heimad.mobilesafe.SplashActivity"
+    android:background="@drawable/luncher_bg">
+
+    <TextView
+        android:id="@+id/tv_splash_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="版本号：1.0"
+        android:textSize="24dp"
+        android:shadowColor="#FFFF00"
+        android:shadowDx="1"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:layout_marginBottom="206dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <ProgressBar
+        android:id="@+id/pb_splash_process"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_splash_version"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp" />
+    <TextView
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_splash_process"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Large Text"/>
+
+</RelativeLayout>

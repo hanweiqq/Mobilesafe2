@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="server_url">http://192.168.56.1:8080/update.html</string>
+    <string name="download_url">/mnt/sdcard/mobilesafe2.0.apk</string>
+    <string name="bt_Home_guanggao">各种广告刷屏。啦fffffffffffffffffffff啦啦啦啦啦啦，</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="功能列表"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="#8866ff00"/>
+    <!--需要获取焦点才能滚动-->
+    <com.heimad.mobilesafe.ui.FocusedTextView
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:text="@string/bt_Home_guanggao"/>
+    <GridView
+        android:layout_marginTop="10dp"
+        android:verticalSpacing="10dp"
+        android:id="@+id/gv_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="3" />
+</LinearLayout>
