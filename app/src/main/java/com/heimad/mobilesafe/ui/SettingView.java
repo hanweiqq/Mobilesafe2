@@ -19,21 +19,49 @@ public class SettingView extends RelativeLayout {
     private TextView tv_title;
     private TextView tv_des;
     private CheckBox cb;
+    private String title;
+    private String des_on;
+    private String des_off;
 
     public SettingView(Context context) {
         super(context);
         init();
     }
 
-
+    /**
+     * 在布局文件中使用控件
+     *
+     * @param context
+     * @param attrs
+     */
     public SettingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
+//        System.out.println(attrs.getAttributeValue(0));
+//        System.out.println(attrs.getAttributeValue(1));
+//        System.out.println(attrs.getAttributeValue(2));
+//        System.out.println(attrs.getAttributeValue(3));
+//        System.out.println(attrs.getAttributeValue(4));
+//        System.out.println(attrs.getAttributeValue(5));
+
+        title = attrs.getAttributeValue("http://schemas.android.com/apk/res-auto", "title");
+        des_on = attrs.getAttributeValue("http://schemas.android.com/apk/res-auto", "des_on");
+        des_off = attrs.getAttributeValue("http://schemas.android.com/apk/res-auto", "des_off");
+
+        setTitle(title);
+        if (cb.isChecked()) {
+            setDes(des_on);
+        } else {
+            setDes(des_off);
+        }
+
     }
+
 
     public SettingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
+
     }
 
     /**
@@ -80,6 +108,13 @@ public class SettingView extends RelativeLayout {
      */
     public void setChecked(boolean isChecked) {
         cb.setChecked(isChecked);
+
+        setTitle(title);
+        if (cb.isChecked()) {
+            setDes(des_on);
+        } else {
+            setDes(des_off);
+        }
     }
 
 

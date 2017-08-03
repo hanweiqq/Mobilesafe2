@@ -32,10 +32,10 @@ public class SettingActivity extends Activity {
         //数据回显
         boolean update = sp.getBoolean("update", true);
         if(update){
-            sv_update.setDes("自动更新开启");
+          //  sv_update.setDes("自动更新开启");
             sv_update.setChecked(true);
         }else {
-            sv_update.setDes("自动更新关闭");
+           // sv_update.setDes("自动更新关闭");
             sv_update.setChecked(false);
         }
         sv_update.setOnClickListener(new View.OnClickListener() {
@@ -44,7 +44,7 @@ public class SettingActivity extends Activity {
                 Editor edit  = sp.edit();
                 if(sv_update.isChecked()){
                     sv_update.setChecked(false);
-                    sv_update.setDes("自动更新关闭");
+               //     sv_update.setDes("自动更新关闭");
                     edit.putBoolean("update",false);
                 }else {
                     sv_update.setChecked(true);

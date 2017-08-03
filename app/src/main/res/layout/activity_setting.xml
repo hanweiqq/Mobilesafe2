@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:itheima="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <TextView
@@ -16,6 +17,9 @@
         tools:ignore="HardcodedText" />
 
     <com.heimad.mobilesafe.ui.SettingView
+        itheima:title="自动更新"
+        itheima:des_on="自动更新开启"
+        itheima:des_off="自动更新关闭"
         android:id="@+id/sv_update"
         android:layout_width="match_parent"
         android:layout_height="80dp">
