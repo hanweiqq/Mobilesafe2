@@ -20,6 +20,9 @@
         </activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".ui.SettingActivity" />
+        <activity android:name=".LostFindActivity" />
+        <activity android:name=".ui.SetupActivity1" />
+
     </application>
 
 </manifest>

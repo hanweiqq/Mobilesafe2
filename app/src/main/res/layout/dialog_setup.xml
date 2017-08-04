@@ -18,14 +18,14 @@
 
 
     <EditText
-        android:text="请输入密码"
+        android:hint="请输入密码"
         android:id="@+id/et_password"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:inputType="textPassword" />
 
     <EditText
-        android:text="请再次输入密码"
+        android:hint="请再次输入密码"
         android:id="@+id/et_password_confirm"
         android:layout_width="280dp"
         android:layout_height="wrap_content"

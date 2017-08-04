@@ -110,6 +110,9 @@ public class HomeActivity extends Activity {
                 if (MD5Utils.digest(password).equals(sp_password)) {
                     Toast.makeText(getApplicationContext(), "密码正确", Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
+                    Intent intent = new Intent(getApplicationContext(),LostFindActivity.class);
+                    startActivity(intent);
+
                 } else {
                     Toast.makeText(getApplicationContext(), "密码错误请重新输入", Toast.LENGTH_SHORT).show();
                 }
