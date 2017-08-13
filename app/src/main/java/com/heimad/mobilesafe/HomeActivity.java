@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
@@ -74,6 +73,7 @@ public class HomeActivity extends Activity {
     }
 
 
+    int count = 0;
 
     /**
      * 打开输入密码对话框
@@ -86,7 +86,20 @@ public class HomeActivity extends Activity {
         final EditText et_password = view.findViewById(R.id.et_password);
         Button btn_ok = view.findViewById(R.id.bt_ok);
         Button btn_cancel = view.findViewById(R.id.bt_cancel);
+        ImageView iv_show = view.findViewById(R.id.iv_show);
 
+        //显示密码
+        iv_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count%2==0){
+                    et_password.setInputType(1);
+                }else{
+                    et_password.setInputType(129);
+                }
+                count++;
+            }
+        });
         //取消按钮的点击事件
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,7 +123,7 @@ public class HomeActivity extends Activity {
                 if (MD5Utils.digest(password).equals(sp_password)) {
                     Toast.makeText(getApplicationContext(), "密码正确", Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
-                    Intent intent = new Intent(getApplicationContext(),LostFindActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), LostFindActivity.class);
                     startActivity(intent);
 
                 } else {
@@ -199,7 +212,7 @@ public class HomeActivity extends Activity {
             return 0;
         }
 
-        int[] imageId = {R.drawable.safe, R.drawable.callmsgsafe, R.drawable.app,
+        int[] imageId = {R.drawable.safe, R.drawable.selector_callmsgsafe, R.drawable.app,
                 R.drawable.taskmanager, R.drawable.netmanager, R.drawable.trojan,
                 R.drawable.sysoptimize, R.drawable.atools, R.drawable.settings};
         String[] names = {"手机防盗", "通讯卫士", "管理软件", "进程管理", "流量统计",

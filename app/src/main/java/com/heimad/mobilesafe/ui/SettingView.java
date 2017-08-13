@@ -37,7 +37,7 @@ public class SettingView extends RelativeLayout {
     public SettingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
-//        System.out.println(attrs.getAttributeValue(0));
+//        System.out.println("************************"+attrs.getAttributeValue(0));
 //        System.out.println(attrs.getAttributeValue(1));
 //        System.out.println(attrs.getAttributeValue(2));
 //        System.out.println(attrs.getAttributeValue(3));
